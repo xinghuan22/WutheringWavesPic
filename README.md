@@ -1,0 +1,2 @@
+# WutheringWavesPic
+适用于WutheringWavesUID插件的鸣潮角色面板图
