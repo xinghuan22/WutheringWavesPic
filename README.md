@@ -1,6 +1,6 @@
 # WutheringWavesPic
 
-![img](https://profile-counter.glitch.me/xinghuan22/count.svg)
+![img](https://profile-counter.glitch.me/wuthering-waves-pic/count.svg)
 
 ## 项目介绍
 
