@@ -8,6 +8,8 @@
 
 ![img](https://profile-counter.glitch.me/wuthering-waves-pic/count.svg)
 
+</div>
+
 ## 项目介绍
 
 WutheringWavesPic 是一个为 [WutheringWavesUID](#外部链接) 插件准备的鸣潮角色面板图库，本意是为自己的 Bot 留档，但 GitHub 上貌似没有类似的仓库，索性公开，供新入坑的小伙伴使用。
@@ -47,4 +49,3 @@ WutheringWavesPic 是一个为 [WutheringWavesUID](#外部链接) 插件准备�
 如果你喜欢本项目，欢迎点个 star 支持一下！  
 感谢大家的支持与参与！
 
-</div>

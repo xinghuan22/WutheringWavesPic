@@ -8,6 +8,9 @@
 
 ![img](https://profile-counter.glitch.me/wuthering-waves-pic/count.svg)
 
+</div>
+
+
 ## Project Introduction
 
 WutheringWavesPic is a gallery of character panels prepared for the [WutheringWavesUID](#external-links) plugin. Initially intended as an archive for my bot, I decided to make it public since there doesn't seem to be a similar repository on GitHub. This project is now available for newcomers to use.
@@ -46,5 +49,3 @@ Considering repository capacity, future updates may involve splitting the reposi
 
 If you like this project, please give it a star to show your support!  
 Thank you for your support and participation!
-
-</div>
