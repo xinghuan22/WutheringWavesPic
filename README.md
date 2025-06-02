@@ -1,4 +1,9 @@
+<div style="text-align:center;">
 # WutheringWavesPic
+
+---
+
+[English Version](README_EN.md)
 
 ![img](https://profile-counter.glitch.me/wuthering-waves-pic/count.svg)
 
