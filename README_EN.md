@@ -1,4 +1,5 @@
 <div style="text-align:center;">
+
 # WutheringWavesPic
 
 ---
@@ -45,3 +46,5 @@ Considering repository capacity, future updates may involve splitting the reposi
 
 If you like this project, please give it a star to show your support!  
 Thank you for your support and participation!
+
+</div>

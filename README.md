@@ -1,4 +1,5 @@
 <div style="text-align:center;">
+
 # WutheringWavesPic
 
 ---
@@ -45,3 +46,5 @@ WutheringWavesPic 是一个为 [WutheringWavesUID](#外部链接) 插件准备�
 
 如果你喜欢本项目，欢迎点个 star 支持一下！  
 感谢大家的支持与参与！
+
+</div>
