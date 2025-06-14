@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>图片文件夹列表</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>📁 图片浏览器</h1>
+  <ul id="folder-list"></ul>
+  <script>
+    const folders = ["1102/","1103/","1104/","1105/","1106/","1107/","1202/","1203/","1204/","1205/","1206/","1207/","1301/","1302/","1303/","1304/","1305/","1402/","1404/","1405/","1406/","1407/","1408/","1409/","1501/","1502/","1503/","1504/","1505/","1506/","1507/","1601/","1602/","1603/","1604/","1605/","1606/","1607/"]
+    const baseUrl = "viewer.html?folder=";
+    const list = document.getElementById("folder-list");
+    folders.forEach(f => {
+      const name = f.replace("/", "");
+      const li = document.createElement("li");
+      li.innerHTML = `<a href="${baseUrl}${name}">📁 ${name}</a>`;
+      list.appendChild(li);
+    });
+  </script>
+</body>
+</html>
