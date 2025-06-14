@@ -49,3 +49,46 @@ WutheringWavesPic 是一个为 [WutheringWavesUID](#外部链接) 插件准备�
 如果你喜欢本项目，欢迎点个 star 支持一下！  
 感谢大家的支持与参与！
 
+## 角色名称与id对应表
+> <details>
+> <summary>点击展开查看角色表格</summary>
+> 
+> | 名称       | 角色id | 图片链接                     |
+> |------------|--------|------------------------------|
+> | 散华       | 1102   | [查看图片](https://xinghuan22.github.io/WutheringWavesPic/viewer.html?folder=1102) |
+> | 白芷       | 1103   | [查看图片](https://xinghuan22.github.io/WutheringWavesPic/viewer.html?folder=1103) |
+> | 凌阳       | 1104   | [查看图片](https://xinghuan22.github.io/WutheringWavesPic/viewer.html?folder=1104) |
+> | 折枝       | 1105   | [查看图片](https://xinghuan22.github.io/WutheringWavesPic/viewer.html?folder=1105) |
+> | 釉瑚       | 1106   | [查看图片](https://xinghuan22.github.io/WutheringWavesPic/viewer.html?folder=1106) |
+> | 珂莱塔     | 1107   | [查看图片](https://xinghuan22.github.io/WutheringWavesPic/viewer.html?folder=1107) |
+> | 炽霞       | 1202   | [查看图片](https://xinghuan22.github.io/WutheringWavesPic/viewer.html?folder=1202) |
+> | 安可       | 1203   | [查看图片](https://xinghuan22.github.io/WutheringWavesPic/viewer.html?folder=1203) |
+> | 莫特斐     | 1204   | [查看图片](https://xinghuan22.github.io/WutheringWavesPic/viewer.html?folder=1204) |
+> | 长离       | 1205   | [查看图片](https://xinghuan22.github.io/WutheringWavesPic/viewer.html?folder=1205) |
+> | 布兰特     | 1206   | [查看图片](https://xinghuan22.github.io/WutheringWavesPic/viewer.html?folder=1206) |
+> | 露帕       | 1207   | [查看图片](https://xinghuan22.github.io/WutheringWavesPic/viewer.html?folder=1207) |
+> | 卡卡罗     | 1301   | [查看图片](https://xinghuan22.github.io/WutheringWavesPic/viewer.html?folder=1301) |
+> | 吟霖       | 1302   | [查看图片](https://xinghuan22.github.io/WutheringWavesPic/viewer.html?folder=1302) |
+> | 渊武       | 1303   | [查看图片](https://xinghuan22.github.io/WutheringWavesPic/viewer.html?folder=1303) |
+> | 今汐       | 1304   | [查看图片](https://xinghuan22.github.io/WutheringWavesPic/viewer.html?folder=1304) |
+> | 相里要     | 1305   | [查看图片](https://xinghuan22.github.io/WutheringWavesPic/viewer.html?folder=1305) |
+> | 秧秧       | 1402   | [查看图片](https://xinghuan22.github.io/WutheringWavesPic/viewer.html?folder=1402) |
+> | 秋水       | 1403   | [查看图片](https://xinghuan22.github.io/WutheringWavesPic/viewer.html?folder=1403) |
+> | 忌炎       | 1404   | [查看图片](https://xinghuan22.github.io/WutheringWavesPic/viewer.html?folder=1404) |
+> | 鉴心       | 1405   | [查看图片](https://xinghuan22.github.io/WutheringWavesPic/viewer.html?folder=1405) |
+> | 夏空       | 1407   | [查看图片](https://xinghuan22.github.io/WutheringWavesPic/viewer.html?folder=1407) |
+> | 漂泊者·气动 | 1408   | [查看图片](https://xinghuan22.github.io/WutheringWavesPic/viewer.html?folder=1408) |
+> | 卡提希娅   | 1409   | [查看图片](https://xinghuan22.github.io/WutheringWavesPic/viewer.html?folder=1409) |
+> | 漂泊者·衍射 | 1502   | [查看图片](https://xinghuan22.github.io/WutheringWavesPic/viewer.html?folder=1502) |
+> | 灯灯       | 1504   | [查看图片](https://xinghuan22.github.io/WutheringWavesPic/viewer.html?folder=1504) |
+> | 守岸人     | 1505   | [查看图片](https://xinghuan22.github.io/WutheringWavesPic/viewer.html?folder=1505) |
+> | 菲比       | 1506   | [查看图片](https://xinghuan22.github.io/WutheringWavesPic/viewer.html?folder=1506) |
+> | 赞妮       | 1507   | [查看图片](https://xinghuan22.github.io/WutheringWavesPic/viewer.html?folder=1507) |
+> | 桃祈       | 1601   | [查看图片](https://xinghuan22.github.io/WutheringWavesPic/viewer.html?folder=1601) |
+> | 丹瑾       | 1602   | [查看图片](https://xinghuan22.github.io/WutheringWavesPic/viewer.html?folder=1602) |
+> | 椿         | 1603   | [查看图片](https://xinghuan22.github.io/WutheringWavesPic/viewer.html?folder=1603) |
+> | 漂泊者·湮灭 | 1604   | [查看图片](https://xinghuan22.github.io/WutheringWavesPic/viewer.html?folder=1604) |
+> | 洛可可     | 1606   | [查看图片](https://xinghuan22.github.io/WutheringWavesPic/viewer.html?folder=1606) |
+> | 坎特蕾拉   | 1607   | [查看图片](https://xinghuan22.github.io/WutheringWavesPic/viewer.html?folder=1607) |
+> 
+> </details>
