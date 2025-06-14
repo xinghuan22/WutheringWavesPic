@@ -3,7 +3,7 @@ const folder = params.get("folder");
 document.getElementById("title").innerText = `📁 ${folder}`;
 const gallery = document.getElementById("gallery");
 
-const base = `https://raw.githubusercontent.com/${location.hostname.split('.')[0]}/${location.pathname.split('/')[1]}/gh-pages/${folder}/`;
+const base = `https://raw.githubusercontent.com/${location.hostname.split('.')[0]}/${location.pathname.split('/')[1]}/main/${folder}/`;
 
 fetch(`${base}index.json`)
   .then(r => r.json())
