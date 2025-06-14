@@ -1,0 +1,121 @@
+# .github/workflows/deploy.yml
+name: Build Viewer to gh-pages
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v3
+
+      - name: Generate index.json files
+        run: |
+          find . -mindepth 1 -maxdepth 1 -type d | while read dir; do
+            cd "$dir"
+            files=$(ls | grep -Ei '\.(png|jpe?g|webp|gif)$' | jq -R -s -c 'split("\n")[:-1]')
+            echo "$files" > index.json
+            cd ..
+          done
+
+      - name: Create static viewer to _site
+        run: |
+          mkdir -p _site/js
+
+          # index.html
+          cat > _site/index.html <<EOF
+          <!DOCTYPE html>
+          <html lang="zh">
+          <head>
+            <meta charset="UTF-8">
+            <title>图片文件夹列表</title>
+            <link rel="stylesheet" href="style.css">
+          </head>
+          <body>
+            <h1>📁 图片浏览器</h1>
+            <ul id="folder-list"></ul>
+            <script>
+              const folders = $(ls -d [0-9]*/ | jq -R -s -c 'split("\n")[:-1]')
+              const baseUrl = "viewer.html?folder=";
+              const list = document.getElementById("folder-list");
+              folders.forEach(f => {
+                const name = f.replace("/", "");
+                const li = document.createElement("li");
+                li.innerHTML = \`<a href="\${baseUrl}\${name}">📁 \${name}</a>\`;
+                list.appendChild(li);
+              });
+            </script>
+          </body>
+          </html>
+          EOF
+
+          # viewer.html
+          cat > _site/viewer.html <<EOF
+          <!DOCTYPE html>
+          <html lang="zh">
+          <head>
+            <meta charset="UTF-8">
+            <title>图片展示</title>
+            <link rel="stylesheet" href="style.css">
+          </head>
+          <body>
+            <h1 id="title">Loading...</h1>
+            <div id="gallery"></div>
+            <script src="js/render.js"></script>
+          </body>
+          </html>
+          EOF
+
+          # render.js
+          cat > _site/js/render.js <<EOF
+          const params = new URLSearchParams(location.search);
+          const folder = params.get("folder");
+          document.getElementById("title").innerText = \`📁 \${folder}\`;
+          const gallery = document.getElementById("gallery");
+
+          const base = \`https://raw.githubusercontent.com/\${location.hostname.split('.')[0]}/\${location.pathname.split('/')[1]}/main/\${folder}/\`;
+
+          fetch(\`\${base}index.json\`)
+            .then(r => r.json())
+            .then(images => {
+              images.forEach(img => {
+                const el = document.createElement("img");
+                el.src = base + img;
+                el.alt = img;
+                el.style = "max-width:200px;margin:10px;border:1px solid #ccc;";
+                gallery.appendChild(el);
+              });
+            });
+          EOF
+
+          # style.css
+          cat > _site/style.css <<EOF
+          body {
+            font-family: sans-serif;
+            padding: 20px;
+            background: #f2f2f2;
+          }
+          img {
+            max-width: 200px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+          }
+          EOF
+
+      - name: Copy image folders to _site
+        run: |
+          for dir in [0-9][0-9]*/; do
+            cp -r "$dir" _site/
+          done
+
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          publish_branch: gh-pages
