@@ -53,6 +53,7 @@ WutheringWavesPic 是一个为 [WutheringWavesUID](#外部链接) 插件准备�
 > <details>
 > <summary>点击展开查看角色表格</summary>
 > 
+> [查看全部角色](https://xinghuan22.github.io/WutheringWavesPic)
 > | 名称       | 角色id | 图片链接                     |
 > |------------|--------|------------------------------|
 > | 散华       | 1102   | [查看图片](https://xinghuan22.github.io/WutheringWavesPic/viewer.html?folder=1102) |

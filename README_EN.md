@@ -10,7 +10,6 @@
 
 </div>
 
-
 ## Project Introduction
 
 WutheringWavesPic is a gallery of character panels prepared for the [WutheringWavesUID](#external-links) plugin. Initially intended as an archive for my bot, I decided to make it public since there doesn't seem to be a similar repository on GitHub. This project is now available for newcomers to use.
@@ -51,9 +50,11 @@ If you like this project, please give it a star to show your support!
 Thank you for your support and participation!
 
 ## Character Names and IDs
+
 > <details>
 > <summary>Click to view character table</summary>
-> 
+>
+> [View All Character Gallery](https://xinghuan22.github.io/WutheringWavesPic)
 > | Name | ID | Gallery |
 > |------------|--------|------------------------------|
 > | Sanhua | 1102 | [View Gallery](https://xinghuan22.github.io/WutheringWavesPic/viewer.html?folder=1102) |
