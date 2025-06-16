@@ -36,21 +36,43 @@ jobs:
             <link rel="stylesheet" href="style.css">
           </head>
           <body>
-            <h1>📁 图片浏览器</h1>
+            <h1>📁 xinghuan22的鸣潮图片浏览器</h1>
             <ul id="folder-list"></ul>
             <script>
-              const folders = $(ls -d [0-9]*/ | jq -R -s -c 'split("\n")[:-1]')
-              const baseUrl = "viewer.html?folder=";
-              const list = document.getElementById("folder-list");
-              folders.forEach(f => {
-                const name = f.replace("/", "");
-                const li = document.createElement("li");
-                li.innerHTML = \`<a href="\${baseUrl}\${name}">📁 \${name}</a>\`;
-                list.appendChild(li);
-              });
+              // 获取角色数据
+              fetch('https://api.hakush.in/ww//data/character.json')
+                .then(r => r.json())
+                .then(charData => {
+                  const folders = $(ls -d [0-9]*/ | jq -R -s -c 'split("\n")[:-1]')
+                  const baseUrl = "viewer.html?folder=";
+                  const list = document.getElementById("folder-list");
+                  
+                  folders.forEach(f => {
+                    const folderId = f.replace("/", "");
+                    const charInfo = charData[folderId];
+                    
+                    if(charInfo) {
+                      const li = document.createElement("li");
+                      // 显示中文名(文件夹ID)的格式
+                      li.innerHTML = `<a href="${baseUrl}${folderId}">${charInfo['zh-Hans']} (${folderId})</a>`;
+                      list.appendChild(li);
+                    }
+                  });
+                })
+                .catch(err => {
+                  console.error('获取角色数据失败:', err);
+                  // 获取失败时使用原始显示方式
+                  const folders = $(ls -d [0-9]*/ | jq -R -s -c 'split("\n")[:-1]')
+                  folders.forEach(f => {
+                    const name = f.replace("/", "");
+                    const li = document.createElement("li");
+                    li.innerHTML = `<a href="${baseUrl}${name}">📁 ${name}</a>`;
+                    list.appendChild(li);
+                  });
+                });
             </script>
           </body>
-          </html>
+          </html> 
           EOF
 
           # viewer.html
@@ -63,8 +85,28 @@ jobs:
             <link rel="stylesheet" href="style.css">
           </head>
           <body>
+            <a href="index.html">返回主页</a>
             <h1 id="title">Loading...</h1>
             <div id="gallery"></div>
+            <script>
+              const params = new URLSearchParams(location.search);
+              const folder = params.get("folder");
+              
+              // 获取角色数据并更新标题
+              fetch('https://api.hakush.in/ww//data/character.json')
+                .then(r => r.json())
+                .then(charData => {
+                  const charInfo = charData[folder];
+                  if(charInfo) {
+                    document.getElementById("title").innerText = `📁 ${charInfo['zh-Hans']}`;
+                  } else {
+                    document.getElementById("title").innerText = `📁 ${folder}`;
+                  }
+                })
+                .catch(() => {
+                  document.getElementById("title").innerText = `📁 ${folder}`;
+                });
+            </script>
             <script src="js/render.js"></script>
           </body>
           </html>
