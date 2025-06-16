@@ -100,22 +100,23 @@ jobs:
             <h1 id="title">Loading...</h1>
             <div id="gallery"></div>
             <script>
-              const params = new URLSearchParams(location.search);
-              const folder = params.get("folder");
+              // 将参数声明为全局变量
+              window.urlParams = new URLSearchParams(location.search);
+              window.currentFolder = window.urlParams.get("folder");
               
               // 从本地读取角色数据
               fetch('character.json')
                 .then(r => r.json())
                 .then(charData => {
-                  const charInfo = charData[folder];
+                  const charInfo = charData[window.currentFolder];
                   if(charInfo) {
                     document.getElementById("title").innerText = \`📁 \${charInfo['zh-Hans']}\`;
                   } else {
-                    document.getElementById("title").innerText = \`📁 \${folder}\`;
+                    document.getElementById("title").innerText = \`📁 \${window.currentFolder}\`;
                   }
                 })
                 .catch(() => {
-                  document.getElementById("title").innerText = \`📁 \${folder}\`;
+                  document.getElementById("title").innerText = \`📁 \${window.currentFolder}\`;
                 });
             </script>
             <script src="js/render.js"></script>
@@ -123,14 +124,11 @@ jobs:
           </html>
           EOF
 
-          # render.js
+          # render.js 修改
           cat > _site/js/render.js <<EOF
-          const params = new URLSearchParams(location.search);
-          const folder = params.get("folder");
-          document.getElementById("title").innerText = \`📁 \${folder}\`;
+          // 使用全局变量
           const gallery = document.getElementById("gallery");
-
-          const base = \`https://raw.githubusercontent.com/\${location.hostname.split('.')[0]}/\${location.pathname.split('/')[1]}/gh-pages/\${folder}/\`;
+          const base = \`https://raw.githubusercontent.com/\${location.hostname.split('.')[0]}/\${location.pathname.split('/')[1]}/gh-pages/\${window.currentFolder}/\`;
 
           fetch(\`\${base}index.json\`)
             .then(r => r.json())
