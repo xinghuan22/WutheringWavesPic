@@ -39,48 +39,93 @@ jobs:
           # index.html
           cat > _site/index.html <<EOF
           <!DOCTYPE html>
-          <html lang="zh">
+          <html>
           <head>
             <meta charset="UTF-8">
-            <title>图片文件夹列表</title>
+            <title>Wuthering Waves Gallery</title>
             <link rel="stylesheet" href="style.css">
           </head>
           <body>
-            <h1>📁 图片浏览器</h1>
+            <div id="header">
+              <h1 id="title"></h1>
+              <select id="langSelect" onchange="changeLang(this.value)">
+                <option value="zh">中文</option>
+                <option value="en">English</option>
+              </select>
+            </div>
             <ul id="folder-list"></ul>
             <script>
-              // 从本地读取角色数据
-              fetch('character.json')
-                .then(r => r.json())
-                .then(charData => {
-                  const folders = JSON.parse('${{ steps.get_folders.outputs.folders }}');
-                  const baseUrl = "viewer.html?folder=";
-                  const list = document.getElementById("folder-list");
-                  
-                  folders.forEach(f => {
-                    const folderId = f.replace("/", "");
-                    const charInfo = charData[folderId];
+              // 国际化文本
+              const i18n = {
+                zh: {
+                  title: "📁 xinghuan22 的鸣潮 bot 面板图",
+                  loading: "加载中...",
+                  error: "读取角色数据失败:"
+                },
+                en: {
+                  title: "📁 xinghuan22's Wuthering Waves Bot Gallery",
+                  loading: "Loading...",
+                  error: "Failed to load character data:"
+                }
+              };
+
+              // 获取浏览器语言
+              let currentLang = navigator.language.startsWith('zh') ? 'zh' : 'en';
+              document.getElementById('langSelect').value = currentLang;
+              
+              // 更新页面文本
+              function updateTexts() {
+                document.getElementById('title').innerText = i18n[currentLang].title;
+              }
+
+              // 切换语言
+              function changeLang(lang) {
+                currentLang = lang;
+                updateTexts();
+                loadGallery();
+              }
+
+              // 加载图库
+              function loadGallery() {
+                fetch('character.json')
+                  .then(r => r.json())
+                  .then(charData => {
+                    const folders = JSON.parse('${{ steps.get_folders.outputs.folders }}');
+                    const baseUrl = "viewer.html?folder=";
+                    const list = document.getElementById("folder-list");
+                    list.innerHTML = ''; // 清空现有内容
                     
-                    if(charInfo) {
+                    folders.forEach(f => {
+                      const folderId = f.replace("/", "");
+                      const charInfo = charData[folderId];
+                      
+                      if(charInfo) {
+                        const li = document.createElement("li");
+                        const charName = currentLang === 'zh' ? charInfo['zh-Hans'] : charInfo['en'];
+                        li.innerHTML = \`<a href="\${baseUrl}\${folderId}&lang=\${currentLang}">\${charName} (\${folderId})</a>\`;
+                        list.appendChild(li);
+                      }
+                    });
+                  })
+                  .catch(err => {
+                    console.error(i18n[currentLang].error, err);
+                    const folders = JSON.parse('${{ steps.get_folders.outputs.folders }}');
+                    const baseUrl = "viewer.html?folder=";
+                    const list = document.getElementById("folder-list");
+                    list.innerHTML = '';
+                    
+                    folders.forEach(f => {
+                      const name = f.replace("/", "");
                       const li = document.createElement("li");
-                      li.innerHTML = \`<a href="\${baseUrl}\${folderId}">\${charInfo['zh-Hans']} (\${folderId})</a>\`;
+                      li.innerHTML = \`<a href="\${baseUrl}\${name}&lang=\${currentLang}">📁 \${name}</a>\`;
                       list.appendChild(li);
-                    }
+                    });
                   });
-                })
-                .catch(err => {
-                  console.error('读取角色数据失败:', err);
-                  const folders = JSON.parse('${{ steps.get_folders.outputs.folders }}');
-                  const baseUrl = "viewer.html?folder=";
-                  const list = document.getElementById("folder-list");
-                  
-                  folders.forEach(f => {
-                    const name = f.replace("/", "");
-                    const li = document.createElement("li");
-                    li.innerHTML = \`<a href="\${baseUrl}\${name}">📁 \${name}</a>\`;
-                    list.appendChild(li);
-                  });
-                });
+              }
+
+              // 初始化
+              updateTexts();
+              loadGallery();
             </script>
           </body>
           </html>
@@ -89,35 +134,77 @@ jobs:
           # viewer.html 修改
           cat > _site/viewer.html <<EOF
           <!DOCTYPE html>
-          <html lang="zh">
+          <html>
           <head>
             <meta charset="UTF-8">
-            <title>图片展示</title>
+            <title>Image Viewer</title>
             <link rel="stylesheet" href="style.css">
           </head>
           <body>
-            <a href="index.html">返回主页</a>
-            <h1 id="title">Loading...</h1>
+            <div id="header">
+              <a href="index.html" id="backLink"></a>
+              <select id="langSelect" onchange="changeLang(this.value)">
+                <option value="zh">中文</option>
+                <option value="en">English</option>
+              </select>
+            </div>
+            <h1 id="title"></h1>
             <div id="gallery"></div>
             <script>
-              // 将参数声明为全局变量
+              // 国际化文本
+              const i18n = {
+                zh: {
+                  back: "返回主页",
+                  loading: "加载中...",
+                  folder: "📁 "
+                },
+                en: {
+                  back: "Back to Home",
+                  loading: "Loading...",
+                  folder: "📁 "
+                }
+              };
+
+              // 获取URL参数
               window.urlParams = new URLSearchParams(location.search);
               window.currentFolder = window.urlParams.get("folder");
-              
-              // 从本地读取角色数据
-              fetch('character.json')
-                .then(r => r.json())
-                .then(charData => {
-                  const charInfo = charData[window.currentFolder];
-                  if(charInfo) {
-                    document.getElementById("title").innerText = \`📁 \${charInfo['zh-Hans']}\`;
-                  } else {
-                    document.getElementById("title").innerText = \`📁 \${window.currentFolder}\`;
-                  }
-                })
-                .catch(() => {
-                  document.getElementById("title").innerText = \`📁 \${window.currentFolder}\`;
-                });
+              let currentLang = window.urlParams.get("lang") || (navigator.language.startsWith('zh') ? 'zh' : 'en');
+              document.getElementById('langSelect').value = currentLang;
+
+              // 更新页面文本
+              function updateTexts() {
+                document.getElementById('backLink').innerText = i18n[currentLang].back;
+                document.getElementById('title').innerText = i18n[currentLang].loading;
+              }
+
+              // 切换语言
+              function changeLang(lang) {
+                currentLang = lang;
+                updateTexts();
+                loadCharacterInfo();
+              }
+
+              // 加载角色信息
+              function loadCharacterInfo() {
+                fetch('character.json')
+                  .then(r => r.json())
+                  .then(charData => {
+                    const charInfo = charData[window.currentFolder];
+                    if(charInfo) {
+                      const charName = currentLang === 'zh' ? charInfo['zh-Hans'] : charInfo['en'];
+                      document.getElementById("title").innerText = i18n[currentLang].folder + charName;
+                    } else {
+                      document.getElementById("title").innerText = i18n[currentLang].folder + window.currentFolder;
+                    }
+                  })
+                  .catch(() => {
+                    document.getElementById("title").innerText = i18n[currentLang].folder + window.currentFolder;
+                  });
+              }
+
+              // 初始化
+              updateTexts();
+              loadCharacterInfo();
             </script>
             <script src="js/render.js"></script>
           </body>
@@ -155,6 +242,19 @@ jobs:
             margin: 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
+          }
+
+          #header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+          }
+
+          #langSelect {
+            padding: 5px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
           }
           EOF
 
