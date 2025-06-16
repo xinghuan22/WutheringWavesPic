@@ -26,6 +26,11 @@ jobs:
         run: |
           mkdir -p _site/js
 
+          folders=$(ls -d [0-9]*/ 2>/dev/null | jq -R -s -c 'split("\n") | map(select(. != ""))')
+          if [ -z "$folders" ]; then
+            folders="[]"
+          fi
+
           # index.html
           cat > _site/index.html <<EOF
           <!DOCTYPE html>
@@ -39,13 +44,13 @@ jobs:
             <h1>📁 xinghuan22的鸣潮图片浏览器</h1>
             <ul id="folder-list"></ul>
             <script>
-              const folders = $(ls -d [0-9]*/ | jq -R -s -c 'split("\n")[:-1]')
-              const baseUrl = "viewer.html?folder=";
-              const list = document.getElementById("folder-list");
               // 获取角色数据
               fetch('https://api.hakush.in/ww//data/character.json')
                 .then(r => r.json())
                 .then(charData => {
+                  const folders = $folders;
+                  const baseUrl = "viewer.html?folder=";
+                  const list = document.getElementById("folder-list");
                   
                   folders.forEach(f => {
                     const folderId = f.replace("/", "");
@@ -54,7 +59,7 @@ jobs:
                     if(charInfo) {
                       const li = document.createElement("li");
                       // 显示中文名(文件夹ID)的格式
-                      li.innerHTML = `<a href="${baseUrl}${folderId}">${charInfo['zh-Hans']} (${folderId})</a>`;
+                      li.innerHTML = \`<a href="\${baseUrl}\${folderId}">\${charInfo['zh-Hans']} (\${folderId})</a>\`;
                       list.appendChild(li);
                     }
                   });
