@@ -13,8 +13,8 @@
     const params = new URLSearchParams(location.search);
     const folder = params.get("folder");
     
-    // 获取角色数据并更新标题
-    fetch('https://api.hakush.in/ww//data/character.json')
+    // 从本地读取角色数据
+    fetch('character.json')
       .then(r => r.json())
       .then(charData => {
         const charInfo = charData[folder];
