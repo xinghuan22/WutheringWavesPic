@@ -1,46 +1,91 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html>
 <head>
   <meta charset="UTF-8">
-  <title>图片文件夹列表</title>
+  <title>Wuthering Waves Gallery</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>📁 图片浏览器</h1>
+  <div id="header">
+    <h1 id="title"></h1>
+    <select id="langSelect" onchange="changeLang(this.value)">
+      <option value="zh">中文</option>
+      <option value="en">English</option>
+    </select>
+  </div>
   <ul id="folder-list"></ul>
   <script>
-    // 从本地读取角色数据
-    fetch('character.json')
-      .then(r => r.json())
-      .then(charData => {
-        const folders = JSON.parse('["1102/","1103/","1104/","1105/","1106/","1107/","1202/","1203/","1204/","1205/","1206/","1207/","1301/","1302/","1303/","1304/","1305/","1402/","1404/","1405/","1406/","1407/","1408/","1409/","1501/","1502/","1503/","1504/","1505/","1506/","1507/","1601/","1602/","1603/","1604/","1605/","1606/","1607/"]');
-        const baseUrl = "viewer.html?folder=";
-        const list = document.getElementById("folder-list");
-        
-        folders.forEach(f => {
-          const folderId = f.replace("/", "");
-          const charInfo = charData[folderId];
+    // 国际化文本
+    const i18n = {
+      zh: {
+        title: "📁 xinghuan22 的鸣潮 bot 面板图",
+        loading: "加载中...",
+        error: "读取角色数据失败:"
+      },
+      en: {
+        title: "📁 xinghuan22's Wuthering Waves Bot Gallery",
+        loading: "Loading...",
+        error: "Failed to load character data:"
+      }
+    };
+
+    // 获取浏览器语言
+    let currentLang = navigator.language.startsWith('zh') ? 'zh' : 'en';
+    document.getElementById('langSelect').value = currentLang;
+    
+    // 更新页面文本
+    function updateTexts() {
+      document.getElementById('title').innerText = i18n[currentLang].title;
+    }
+
+    // 切换语言
+    function changeLang(lang) {
+      currentLang = lang;
+      updateTexts();
+      loadGallery();
+    }
+
+    // 加载图库
+    function loadGallery() {
+      fetch('character.json')
+        .then(r => r.json())
+        .then(charData => {
+          const folders = JSON.parse('["1102/","1103/","1104/","1105/","1106/","1107/","1202/","1203/","1204/","1205/","1206/","1207/","1301/","1302/","1303/","1304/","1305/","1402/","1404/","1405/","1406/","1407/","1408/","1409/","1501/","1502/","1503/","1504/","1505/","1506/","1507/","1601/","1602/","1603/","1604/","1605/","1606/","1607/"]');
+          const baseUrl = "viewer.html?folder=";
+          const list = document.getElementById("folder-list");
+          list.innerHTML = ''; // 清空现有内容
           
-          if(charInfo) {
+          folders.forEach(f => {
+            const folderId = f.replace("/", "");
+            const charInfo = charData[folderId];
+            
+            if(charInfo) {
+              const li = document.createElement("li");
+              const charName = currentLang === 'zh' ? charInfo['zh-Hans'] : charInfo['en'];
+              li.innerHTML = `<a href="${baseUrl}${folderId}&lang=${currentLang}">${charName} (${folderId})</a>`;
+              list.appendChild(li);
+            }
+          });
+        })
+        .catch(err => {
+          console.error(i18n[currentLang].error, err);
+          const folders = JSON.parse('["1102/","1103/","1104/","1105/","1106/","1107/","1202/","1203/","1204/","1205/","1206/","1207/","1301/","1302/","1303/","1304/","1305/","1402/","1404/","1405/","1406/","1407/","1408/","1409/","1501/","1502/","1503/","1504/","1505/","1506/","1507/","1601/","1602/","1603/","1604/","1605/","1606/","1607/"]');
+          const baseUrl = "viewer.html?folder=";
+          const list = document.getElementById("folder-list");
+          list.innerHTML = '';
+          
+          folders.forEach(f => {
+            const name = f.replace("/", "");
             const li = document.createElement("li");
-            li.innerHTML = `<a href="${baseUrl}${folderId}">${charInfo['zh-Hans']} (${folderId})</a>`;
+            li.innerHTML = `<a href="${baseUrl}${name}&lang=${currentLang}">📁 ${name}</a>`;
             list.appendChild(li);
-          }
+          });
         });
-      })
-      .catch(err => {
-        console.error('读取角色数据失败:', err);
-        const folders = JSON.parse('["1102/","1103/","1104/","1105/","1106/","1107/","1202/","1203/","1204/","1205/","1206/","1207/","1301/","1302/","1303/","1304/","1305/","1402/","1404/","1405/","1406/","1407/","1408/","1409/","1501/","1502/","1503/","1504/","1505/","1506/","1507/","1601/","1602/","1603/","1604/","1605/","1606/","1607/"]');
-        const baseUrl = "viewer.html?folder=";
-        const list = document.getElementById("folder-list");
-        
-        folders.forEach(f => {
-          const name = f.replace("/", "");
-          const li = document.createElement("li");
-          li.innerHTML = `<a href="${baseUrl}${name}">📁 ${name}</a>`;
-          list.appendChild(li);
-        });
-      });
+    }
+
+    // 初始化
+    updateTexts();
+    loadGallery();
   </script>
 </body>
 </html>

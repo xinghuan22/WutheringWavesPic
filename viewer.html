@@ -1,33 +1,75 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html>
 <head>
   <meta charset="UTF-8">
-  <title>图片展示</title>
+  <title>Image Viewer</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <a href="index.html">返回主页</a>
-  <h1 id="title">Loading...</h1>
+  <div id="header">
+    <a href="index.html" id="backLink"></a>
+    <select id="langSelect" onchange="changeLang(this.value)">
+      <option value="zh">中文</option>
+      <option value="en">English</option>
+    </select>
+  </div>
+  <h1 id="title"></h1>
   <div id="gallery"></div>
   <script>
-    // 将参数声明为全局变量
+    // 国际化文本
+    const i18n = {
+      zh: {
+        back: "返回主页",
+        loading: "加载中...",
+        folder: "📁 "
+      },
+      en: {
+        back: "Back to Home",
+        loading: "Loading...",
+        folder: "📁 "
+      }
+    };
+
+    // 获取URL参数
     window.urlParams = new URLSearchParams(location.search);
     window.currentFolder = window.urlParams.get("folder");
-    
-    // 从本地读取角色数据
-    fetch('character.json')
-      .then(r => r.json())
-      .then(charData => {
-        const charInfo = charData[window.currentFolder];
-        if(charInfo) {
-          document.getElementById("title").innerText = `📁 ${charInfo['zh-Hans']}`;
-        } else {
-          document.getElementById("title").innerText = `📁 ${window.currentFolder}`;
-        }
-      })
-      .catch(() => {
-        document.getElementById("title").innerText = `📁 ${window.currentFolder}`;
-      });
+    let currentLang = window.urlParams.get("lang") || (navigator.language.startsWith('zh') ? 'zh' : 'en');
+    document.getElementById('langSelect').value = currentLang;
+
+    // 更新页面文本
+    function updateTexts() {
+      document.getElementById('backLink').innerText = i18n[currentLang].back;
+      document.getElementById('title').innerText = i18n[currentLang].loading;
+    }
+
+    // 切换语言
+    function changeLang(lang) {
+      currentLang = lang;
+      updateTexts();
+      loadCharacterInfo();
+    }
+
+    // 加载角色信息
+    function loadCharacterInfo() {
+      fetch('character.json')
+        .then(r => r.json())
+        .then(charData => {
+          const charInfo = charData[window.currentFolder];
+          if(charInfo) {
+            const charName = currentLang === 'zh' ? charInfo['zh-Hans'] : charInfo['en'];
+            document.getElementById("title").innerText = i18n[currentLang].folder + charName;
+          } else {
+            document.getElementById("title").innerText = i18n[currentLang].folder + window.currentFolder;
+          }
+        })
+        .catch(() => {
+          document.getElementById("title").innerText = i18n[currentLang].folder + window.currentFolder;
+        });
+    }
+
+    // 初始化
+    updateTexts();
+    loadCharacterInfo();
   </script>
   <script src="js/render.js"></script>
 </body>
