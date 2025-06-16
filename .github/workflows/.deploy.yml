@@ -12,8 +12,9 @@ jobs:
       - name: Checkout main branch
         uses: actions/checkout@v3
 
-      - name: Download character data
+      - name: Create _site directory and download character data
         run: |
+          mkdir -p _site
           curl -o _site/character.json https://api.hakush.in/ww//data/character.json
 
       - name: Generate index.json files
