@@ -59,7 +59,7 @@ jobs:
                     if(charInfo) {
                       const li = document.createElement("li");
                       // 显示中文名(文件夹ID)的格式
-                      li.innerHTML = \`<a href="\${baseUrl}\${folderId}">\${charInfo['zh-Hans']} (\${folderId})</a>\`;
+                      li.innerHTML = `<a href="\${baseUrl}\${folderId}">\${charInfo['zh-Hans']} (\${folderId})</a>`;
                       list.appendChild(li);
                     }
                   });
