@@ -21,12 +21,6 @@ jobs:
             cd ..
           done
 
-      - name: Get folders
-        id: get_folders
-        run: |
-          folders=$(ls -d [0-9]*/ 2>/dev/null | jq -R -s -c 'split("\n") | map(select(. != ""))')
-          echo "::set-output name=folders::$folders"
-
       - name: Create static viewer to _site
         run: |
           mkdir -p _site/js
@@ -44,7 +38,7 @@ jobs:
             <h1>📁 图片浏览器</h1>
             <ul id="folder-list"></ul>
             <script>
-              const folders = JSON.parse('${{ steps.get_folders.outputs.folders }}');
+              const folders=$(ls -d [0-9]*/ 2>/dev/null | jq -R -s -c 'split("\n") | map(select(. != ""))');
               const baseUrl = "viewer.html?folder=";
               const list = document.getElementById("folder-list");
               folders.forEach(f => {
@@ -81,13 +75,13 @@ jobs:
                 .then(charData => {
                   const charInfo = charData[folder];
                   if(charInfo) {
-                    document.getElementById("title").innerText = `📁 \${charInfo['zh-Hans']}`;
+                    document.getElementById("title").innerText = \`📁 \${charInfo['zh-Hans']}\`;
                   } else {
-                    document.getElementById("title").innerText = `📁 \${folder}`;
+                    document.getElementById("title").innerText = \`📁 \${folder}\`;
                   }
                 })
                 .catch(() => {
-                  document.getElementById("title").innerText = `📁 \${folder}`;
+                  document.getElementById("title").innerText = \`📁 \${folder}\`;
                 });
             </script>
             <script src="js/render.js"></script>
