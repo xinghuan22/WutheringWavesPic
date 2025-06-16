@@ -1,9 +1,6 @@
-const params = new URLSearchParams(location.search);
-const folder = params.get("folder");
-document.getElementById("title").innerText = `📁 ${folder}`;
+// 使用全局变量
 const gallery = document.getElementById("gallery");
-
-const base = `https://raw.githubusercontent.com/${location.hostname.split('.')[0]}/${location.pathname.split('/')[1]}/gh-pages/${folder}/`;
+const base = `https://raw.githubusercontent.com/${location.hostname.split('.')[0]}/${location.pathname.split('/')[1]}/gh-pages/${window.currentFolder}/`;
 
 fetch(`${base}index.json`)
   .then(r => r.json())
