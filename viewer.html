@@ -6,8 +6,28 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a href="index.html">返回主页</a>
   <h1 id="title">Loading...</h1>
   <div id="gallery"></div>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const folder = params.get("folder");
+    
+    // 获取角色数据并更新标题
+    fetch('https://api.hakush.in/ww//data/character.json')
+      .then(r => r.json())
+      .then(charData => {
+        const charInfo = charData[folder];
+        if(charInfo) {
+          document.getElementById("title").innerText = ;
+        } else {
+          document.getElementById("title").innerText = ;
+        }
+      })
+      .catch(() => {
+        document.getElementById("title").innerText = ;
+      });
+  </script>
   <script src="js/render.js"></script>
 </body>
 </html>
