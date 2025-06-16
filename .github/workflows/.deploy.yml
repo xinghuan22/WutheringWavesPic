@@ -39,13 +39,13 @@ jobs:
             <h1>📁 xinghuan22的鸣潮图片浏览器</h1>
             <ul id="folder-list"></ul>
             <script>
+              const folders = $(ls -d [0-9]*/ | jq -R -s -c 'split("\n")[:-1]')
+              const baseUrl = "viewer.html?folder=";
+              const list = document.getElementById("folder-list");
               // 获取角色数据
               fetch('https://api.hakush.in/ww//data/character.json')
                 .then(r => r.json())
                 .then(charData => {
-                  const folders = JSON.parse(`$(find . -mindepth 1 -maxdepth 1 -type d -printf "%f\n" | jq -R -s -c 'split("\n")[:-1]')`);
-                  const baseUrl = "viewer.html?folder=";
-                  const list = document.getElementById("folder-list");
                   
                   folders.forEach(f => {
                     const folderId = f.replace("/", "");
