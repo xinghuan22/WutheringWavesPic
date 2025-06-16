@@ -12,6 +12,10 @@ jobs:
       - name: Checkout main branch
         uses: actions/checkout@v3
 
+      - name: Download character data
+        run: |
+          curl -o _site/character.json https://api.hakush.in/ww//data/character.json
+
       - name: Generate index.json files
         run: |
           find . -mindepth 1 -maxdepth 1 -type d | while read dir; do
@@ -44,54 +48,44 @@ jobs:
             <h1>📁 图片浏览器</h1>
             <ul id="folder-list"></ul>
             <script>
-              // 获取角色数据
-              fetch('https://api.hakush.in/ww//data/character.json', {
-                mode: 'cors',
-                headers: {
-                  'Accept': 'application/json'
-                }
-              })
-              .then(r => {
-                if (!r.ok) {
-                  throw new Error(`HTTP error! status: ${r.status}`);
-                }
-                return r.json();
-              })
-              .then(r => r.json())
-              .then(charData => {
-                const folders = $(ls -d [0-9]*/ | jq -R -s -c 'split("\n")[:-1]')
-                const baseUrl = "viewer.html?folder=";
-                const list = document.getElementById("folder-list");
-                
-                folders.forEach(f => {
-                  const folderId = f.replace("/", "");
-                  const charInfo = charData[folderId];
+              // 从本地读取角色数据
+              fetch('character.json')
+                .then(r => r.json())
+                .then(charData => {
+                  const folders = JSON.parse('${{ steps.get_folders.outputs.folders }}');
+                  const baseUrl = "viewer.html?folder=";
+                  const list = document.getElementById("folder-list");
                   
-                  if(charInfo) {
+                  folders.forEach(f => {
+                    const folderId = f.replace("/", "");
+                    const charInfo = charData[folderId];
+                    
+                    if(charInfo) {
+                      const li = document.createElement("li");
+                      li.innerHTML = \`<a href="\${baseUrl}\${folderId}">\${charInfo['zh-Hans']} (\${folderId})</a>\`;
+                      list.appendChild(li);
+                    }
+                  });
+                })
+                .catch(err => {
+                  console.error('读取角色数据失败:', err);
+                  const folders = JSON.parse('${{ steps.get_folders.outputs.folders }}');
+                  const baseUrl = "viewer.html?folder=";
+                  const list = document.getElementById("folder-list");
+                  
+                  folders.forEach(f => {
+                    const name = f.replace("/", "");
                     const li = document.createElement("li");
-                    // 显示中文名(文件夹ID)的格式
-                    li.innerHTML = \`<a href="\${baseUrl}\${folderId}">\${charInfo['zh-Hans']} (\${folderId})</a>\`;
+                    li.innerHTML = \`<a href="\${baseUrl}\${name}">📁 \${name}</a>\`;
                     list.appendChild(li);
-                  }
+                  });
                 });
-              })
-              .catch(err => {
-                console.error('获取角色数据失败:', err);
-                // 获取失败时使用原始显示方式
-                const folders = $(ls -d [0-9]*/ | jq -R -s -c 'split("\n")[:-1]')
-                folders.forEach(f => {
-                  const name = f.replace("/", "");
-                  const li = document.createElement("li");
-                  li.innerHTML = \`<a href="\${baseUrl}\${name}">📁 \${name}</a>\`;
-                  list.appendChild(li);
-                });
-              });
             </script>
           </body>
           </html>
           EOF
 
-          # viewer.html
+          # viewer.html 修改
           cat > _site/viewer.html <<EOF
           <!DOCTYPE html>
           <html lang="zh">
@@ -108,8 +102,8 @@ jobs:
               const params = new URLSearchParams(location.search);
               const folder = params.get("folder");
               
-              // 获取角色数据并更新标题
-              fetch('https://api.hakush.in/ww//data/character.json')
+              // 从本地读取角色数据
+              fetch('character.json')
                 .then(r => r.json())
                 .then(charData => {
                   const charInfo = charData[folder];
