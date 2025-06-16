@@ -19,13 +19,13 @@
       .then(charData => {
         const charInfo = charData[folder];
         if(charInfo) {
-          document.getElementById("title").innerText = ;
+          document.getElementById("title").innerText = `📁 ${charInfo['zh-Hans']}`;
         } else {
-          document.getElementById("title").innerText = ;
+          document.getElementById("title").innerText = `📁 ${folder}`;
         }
       })
       .catch(() => {
-        document.getElementById("title").innerText = ;
+        document.getElementById("title").innerText = `📁 ${folder}`;
       });
   </script>
   <script src="js/render.js"></script>
