@@ -35,6 +35,18 @@
         "zh-Hans": "夏空",
         "ja": "シャコンヌ"
     },
+    "1608": {
+        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_41_UI.T_IconRoleHead256_41_UI",
+        "rank": 5,
+        "weapon": 5,
+        "element": 6,
+        "en": "Stay tuned",
+        "nickname": "Stay tuned",
+        "desc": "Stay tuned",
+        "ko": "Stay tuned",
+        "zh-Hans": "弗洛洛",
+        "ja": "フローヴァ"
+    },
     "1303": {
         "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_15_UI.T_IconRoleHead256_15_UI",
         "rank": 4,
