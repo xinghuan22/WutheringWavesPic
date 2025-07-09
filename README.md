@@ -6,7 +6,7 @@
 
 [English Version](README_EN.md)
 
-![img](https://profile-counter.glitch.me/wuthering-waves-pic/count.svg)
+![img](https://komarev.com/ghpvc/?username=wuthering-waves-pic&color=blue)
 
 </div>
 
