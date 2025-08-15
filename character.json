@@ -30,7 +30,7 @@
         "element": 4,
         "en": "Ciaccona",
         "nickname": "Ciaccona",
-        "desc": "A wandering bard from <a href=850096>Rinascita</a>, Ciaccona. She sings not only for the Divinity, but also for the common folk.\n \nShe records stories along her journeys, turning them into songs that evoke laughter, emotion, and tears in both the storytellers and the audience.",
+        "desc": "A wandering bard from <a href=850096>Rinascita</a>, Ciaccona. She sings not only for the Divinity, but also for the common folk.\nShe records stories along her journeys, turning them into songs that evoke laughter, emotion, and tears in both the storytellers and the audience.",
         "ko": "샤콘",
         "zh-Hans": "夏空",
         "ja": "シャコンヌ"
@@ -70,6 +70,18 @@
         "ko": "절지",
         "zh-Hans": "折枝",
         "ja": "折枝"
+    },
+    "1410": {
+        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_48_UI.T_IconRoleHead256_48_UI",
+        "rank": 5,
+        "weapon": 4,
+        "element": 4,
+        "en": "Iuno",
+        "nickname": "Iuno",
+        "desc": "Stay tuned",
+        "ko": "유노",
+        "zh-Hans": "尤诺",
+        "ja": "ユーノ"
     },
     "1304": {
         "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_24_UI.T_IconRoleHead256_24_UI",
@@ -238,6 +250,18 @@
         "ko": "설지",
         "zh-Hans": "白芷",
         "ja": "白芷"
+    },
+    "1306": {
+        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_51_UI.T_IconRoleHead256_51_UI",
+        "rank": 5,
+        "weapon": 1,
+        "element": 3,
+        "en": "Augusta",
+        "nickname": "Augusta",
+        "desc": "Stay tuned",
+        "ko": "아우구스타",
+        "zh-Hans": "奥古斯塔",
+        "ja": "オーガスタ"
     },
     "1106": {
         "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_31_UI.T_IconRoleHead256_31_UI",
