@@ -90,6 +90,19 @@
         "zh-Hans": "尤诺",
         "ja": "ユーノ"
     },
+    "1307": {
+        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_58_UI.T_IconRoleHead256_58_UI",
+        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Buling_UI.T_IconRole_Pile_Buling_UI",
+        "rank": 4,
+        "weapon": 5,
+        "element": 3,
+        "en": "Buling",
+        "nickname": "Buling",
+        "desc": "Taoist of Mengzhou, Black Shores Consultant, feng shui master, and veteran forum dweller. \nEasygoing and well-traveled, Buling will \"bling\" whatever you seek.",
+        "ko": "복링",
+        "zh-Hans": "卜灵",
+        "ja": "卜霊"
+    },
     "1304": {
         "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_24_UI.T_IconRoleHead256_24_UI",
         "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_jinxi_UI.T_IconRole_Pile_jinxi_UI",
@@ -319,7 +332,7 @@
         "element": 4,
         "en": "Qiuyuan",
         "nickname": "Qiuyuan",
-        "desc": "Stay tuned",
+        "desc": "Former senior agent of Mingting's Internal Security Agency. \n\nThough enmity filled his younger days, loyalty defined his later years. However, scapegoated for a murder, he is now but a blind swordsman wandering the world alone.",
         "ko": "구원",
         "zh-Hans": "仇远",
         "ja": "仇遠"
@@ -388,6 +401,19 @@
         "ko": "산화",
         "zh-Hans": "散华",
         "ja": "散華"
+    },
+    "1508": {
+        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_57_UI.T_IconRoleHead256_57_UI",
+        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Qianxiao_UI.T_IconRole_Pile_Qianxiao_UI",
+        "rank": 5,
+        "weapon": 1,
+        "element": 6,
+        "en": "Chisa",
+        "nickname": "Chisa",
+        "desc": "\"Just an ordinary student.\"\n\nCalmly, she introduces herself, a faint iridescent shimmer flickering in her eyes. Again, the structures of the world reveal themselves in her vision. Narrowing her eyes, she singles out the very thread that tugs at life itself.",
+        "ko": "치사",
+        "zh-Hans": "千咲",
+        "ja": "千咲"
     },
     "1301": {
         "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_18_UI.T_IconRoleHead256_18_UI",
@@ -514,7 +540,7 @@
         "element": 2,
         "en": "Galbrena",
         "nickname": "Galbrena",
-        "desc": "Stay tuned",
+        "desc": "Cold and decisive, she is the \"Discord Slayer\" who hunts across Solaris and the same \"Fiend of Ever-burning Flame\" spoken of in whispers. Now, she serves as a Black Shores Consultant, active across the world.",
         "ko": "갈브레나",
         "zh-Hans": "嘉贝莉娜",
         "ja": "ガルブレーナ"
