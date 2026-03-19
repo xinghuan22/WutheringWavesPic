@@ -15,7 +15,8 @@ jobs:
       - name: Create _site directory and download character data
         run: |
           mkdir -p _site
-          curl -o _site/character.json https://api.hakush.in/ww//data/character.json
+          curl -o _site/character.json https://ww1.loping151.top/XutheringWavesUID/resource/map/CharId2Data.json
+          curl -o _site/char_i18n.json https://ww1.loping151.top/XutheringWavesUID/resource/map/i18n/char_i18n.json
 
       - name: Generate index.json files
         run: |
@@ -69,6 +70,46 @@ jobs:
                 }
               };
 
+              function getChineseName(charInfo) {
+                if (!charInfo) return null;
+                const fields = ['name', 'Name', 'cn', 'zh', 'zhCN', 'zhHans', 'zh-Hans'];
+                for (const field of fields) {
+                  const value = charInfo[field];
+                  if (typeof value === 'string' && value.trim()) {
+                    return value;
+                  }
+                }
+                return null;
+              }
+
+              function getEnglishName(charInfo) {
+                if (!charInfo) return null;
+                const fields = ['en', 'EN', 'name_en', 'NameEn', 'enUS', 'english'];
+                for (const field of fields) {
+                  const value = charInfo[field];
+                  if (typeof value === 'string' && value.trim()) {
+                    return value;
+                  }
+                }
+                return null;
+              }
+
+              function getCharacterName(folderId, charData, charI18n, lang) {
+                const charInfo = charData?.[folderId];
+                const chineseName = getChineseName(charInfo);
+                const i18nEntry = chineseName ? charI18n?.[chineseName] : null;
+
+                if (lang === 'zh') {
+                  return chineseName || getEnglishName(charInfo) || folderId;
+                }
+
+                if (lang === 'cht' && i18nEntry?.cht) {
+                  return i18nEntry.cht;
+                }
+
+                return i18nEntry?.en || getEnglishName(charInfo) || chineseName || folderId;
+              }
+
               // 获取浏览器语言
               let currentLang = navigator.language.startsWith('zh') ? 'zh' : 'en';
               document.getElementById('langSelect').value = currentLang;
@@ -87,9 +128,11 @@ jobs:
 
               // 加载图库
               function loadGallery() {
-                fetch('character.json')
-                  .then(r => r.json())
-                  .then(charData => {
+                Promise.all([
+                  fetch('character.json').then(r => r.json()),
+                  fetch('char_i18n.json').then(r => r.json()).catch(() => ({}))
+                ])
+                  .then(([charData, charI18n]) => {
                     const folders = JSON.parse('${{ steps.get_folders.outputs.folders }}');
                     const baseUrl = "viewer.html?folder=";
                     const list = document.getElementById("folder-list");
@@ -101,7 +144,7 @@ jobs:
                       
                       if(charInfo) {
                         const li = document.createElement("li");
-                        const charName = currentLang === 'zh' ? charInfo['zh-Hans'] : charInfo['en'];
+                        const charName = getCharacterName(folderId, charData, charI18n, currentLang);
                         li.innerHTML = \`<a href="\${baseUrl}\${folderId}&lang=\${currentLang}">\${charName} (\${folderId})</a>\`;
                         list.appendChild(li);
                       }
@@ -165,6 +208,46 @@ jobs:
                 }
               };
 
+              function getChineseName(charInfo) {
+                if (!charInfo) return null;
+                const fields = ['name', 'Name', 'cn', 'zh', 'zhCN', 'zhHans', 'zh-Hans'];
+                for (const field of fields) {
+                  const value = charInfo[field];
+                  if (typeof value === 'string' && value.trim()) {
+                    return value;
+                  }
+                }
+                return null;
+              }
+
+              function getEnglishName(charInfo) {
+                if (!charInfo) return null;
+                const fields = ['en', 'EN', 'name_en', 'NameEn', 'enUS', 'english'];
+                for (const field of fields) {
+                  const value = charInfo[field];
+                  if (typeof value === 'string' && value.trim()) {
+                    return value;
+                  }
+                }
+                return null;
+              }
+
+              function getCharacterName(folderId, charData, charI18n, lang) {
+                const charInfo = charData?.[folderId];
+                const chineseName = getChineseName(charInfo);
+                const i18nEntry = chineseName ? charI18n?.[chineseName] : null;
+
+                if (lang === 'zh') {
+                  return chineseName || getEnglishName(charInfo) || folderId;
+                }
+
+                if (lang === 'cht' && i18nEntry?.cht) {
+                  return i18nEntry.cht;
+                }
+
+                return i18nEntry?.en || getEnglishName(charInfo) || chineseName || folderId;
+              }
+
               // 获取URL参数
               window.urlParams = new URLSearchParams(location.search);
               window.currentFolder = window.urlParams.get("folder");
@@ -186,12 +269,14 @@ jobs:
 
               // 加载角色信息
               function loadCharacterInfo() {
-                fetch('character.json')
-                  .then(r => r.json())
-                  .then(charData => {
+                Promise.all([
+                  fetch('character.json').then(r => r.json()),
+                  fetch('char_i18n.json').then(r => r.json()).catch(() => ({}))
+                ])
+                  .then(([charData, charI18n]) => {
                     const charInfo = charData[window.currentFolder];
                     if(charInfo) {
-                      const charName = currentLang === 'zh' ? charInfo['zh-Hans'] : charInfo['en'];
+                      const charName = getCharacterName(window.currentFolder, charData, charI18n, currentLang);
                       document.getElementById("title").innerText = i18n[currentLang].folder + charName;
                     } else {
                       document.getElementById("title").innerText = i18n[currentLang].folder + window.currentFolder;
