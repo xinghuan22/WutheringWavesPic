@@ -29,6 +29,46 @@
       }
     };
 
+    function getChineseName(charInfo) {
+      if (!charInfo) return null;
+      const fields = ['name', 'Name', 'cn', 'zh', 'zhCN', 'zhHans', 'zh-Hans'];
+      for (const field of fields) {
+        const value = charInfo[field];
+        if (typeof value === 'string' && value.trim()) {
+          return value;
+        }
+      }
+      return null;
+    }
+
+    function getEnglishName(charInfo) {
+      if (!charInfo) return null;
+      const fields = ['en', 'EN', 'name_en', 'NameEn', 'enUS', 'english'];
+      for (const field of fields) {
+        const value = charInfo[field];
+        if (typeof value === 'string' && value.trim()) {
+          return value;
+        }
+      }
+      return null;
+    }
+
+    function getCharacterName(folderId, charData, charI18n, lang) {
+      const charInfo = charData?.[folderId];
+      const chineseName = getChineseName(charInfo);
+      const i18nEntry = chineseName ? charI18n?.[chineseName] : null;
+
+      if (lang === 'zh') {
+        return chineseName || getEnglishName(charInfo) || folderId;
+      }
+
+      if (lang === 'cht' && i18nEntry?.cht) {
+        return i18nEntry.cht;
+      }
+
+      return i18nEntry?.en || getEnglishName(charInfo) || chineseName || folderId;
+    }
+
     // 获取浏览器语言
     let currentLang = navigator.language.startsWith('zh') ? 'zh' : 'en';
     document.getElementById('langSelect').value = currentLang;
@@ -47,10 +87,12 @@
 
     // 加载图库
     function loadGallery() {
-      fetch('character.json')
-        .then(r => r.json())
-        .then(charData => {
-          const folders = JSON.parse('["1102/","1103/","1104/","1105/","1106/","1107/","1202/","1203/","1204/","1205/","1206/","1207/","1208/","1209/","1301/","1302/","1303/","1304/","1305/","1306/","1402/","1404/","1405/","1406/","1407/","1408/","1409/","1410/","1411/","1501/","1502/","1503/","1504/","1505/","1506/","1507/","1508/","1509/","1601/","1602/","1603/","1604/","1605/","1606/","1607/","1608/"]');
+      Promise.all([
+        fetch('character.json').then(r => r.json()),
+        fetch('char_i18n.json').then(r => r.json()).catch(() => ({}))
+      ])
+        .then(([charData, charI18n]) => {
+          const folders = JSON.parse('["1102/","1103/","1104/","1105/","1106/","1107/","1202/","1203/","1204/","1205/","1206/","1207/","1208/","1209/","1210/","1301/","1302/","1303/","1304/","1305/","1306/","1402/","1404/","1405/","1406/","1407/","1408/","1409/","1410/","1411/","1412/","1501/","1502/","1503/","1504/","1505/","1506/","1507/","1508/","1509/","1510/","1601/","1602/","1603/","1604/","1605/","1606/","1607/","1608/"]');
           const baseUrl = "viewer.html?folder=";
           const list = document.getElementById("folder-list");
           list.innerHTML = ''; // 清空现有内容
@@ -61,7 +103,7 @@
             
             if(charInfo) {
               const li = document.createElement("li");
-              const charName = currentLang === 'zh' ? charInfo['zh-Hans'] : charInfo['en'];
+              const charName = getCharacterName(folderId, charData, charI18n, currentLang);
               li.innerHTML = `<a href="${baseUrl}${folderId}&lang=${currentLang}">${charName} (${folderId})</a>`;
               list.appendChild(li);
             }
@@ -69,7 +111,7 @@
         })
         .catch(err => {
           console.error(i18n[currentLang].error, err);
-          const folders = JSON.parse('["1102/","1103/","1104/","1105/","1106/","1107/","1202/","1203/","1204/","1205/","1206/","1207/","1208/","1209/","1301/","1302/","1303/","1304/","1305/","1306/","1402/","1404/","1405/","1406/","1407/","1408/","1409/","1410/","1411/","1501/","1502/","1503/","1504/","1505/","1506/","1507/","1508/","1509/","1601/","1602/","1603/","1604/","1605/","1606/","1607/","1608/"]');
+          const folders = JSON.parse('["1102/","1103/","1104/","1105/","1106/","1107/","1202/","1203/","1204/","1205/","1206/","1207/","1208/","1209/","1210/","1301/","1302/","1303/","1304/","1305/","1306/","1402/","1404/","1405/","1406/","1407/","1408/","1409/","1410/","1411/","1412/","1501/","1502/","1503/","1504/","1505/","1506/","1507/","1508/","1509/","1510/","1601/","1602/","1603/","1604/","1605/","1606/","1607/","1608/"]');
           const baseUrl = "viewer.html?folder=";
           const list = document.getElementById("folder-list");
           list.innerHTML = '';

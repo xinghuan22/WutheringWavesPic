@@ -1,652 +1,155 @@
 {
-    "1408": {
-        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_5_UI.T_IconRoleHead256_5_UI",
-        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhujue_UI.T_IconRole_Pile_zhujue_UI",
-        "rank": 5,
-        "weapon": 2,
-        "element": 4,
-        "en": "Rover: Aero",
-        "nickname": "Rover: Aero",
-        "desc": "A mysterious Resonator with the power to absorb all sounds. Currently journeying to find their lost memories.",
-        "ko": "방랑자 · 기류",
-        "zh-Hans": "漂泊者·气动",
-        "ja": "漂泊者・気動"
-    },
-    "1604": {
-        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_5_UI.T_IconRoleHead256_5_UI",
-        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhujue_UI.T_IconRole_Pile_zhujue_UI",
-        "rank": 5,
-        "weapon": 2,
-        "element": 6,
-        "en": "Rover: Havoc",
-        "nickname": "Vessel of Sounds",
-        "desc": "A mysterious Resonator with the power to absorb all sounds. Currently journeying to find their lost memories.",
-        "ko": "방랑자 · 인멸",
-        "zh-Hans": "漂泊者·湮灭",
-        "ja": "漂泊者・消滅"
-    },
-    "1407": {
-        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_37_UI.T_IconRoleHead256_37_UI",
-        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_xiakong_UI.T_IconRole_Pile_xiakong_UI",
-        "rank": 5,
-        "weapon": 3,
-        "element": 4,
-        "en": "Ciaccona",
-        "nickname": "Ciaccona",
-        "desc": "A wandering bard from <te href=850096>Rinascita</te>, Ciaccona. She sings not only for the Divinity, but also for the common folk.\nShe records stories along her journeys, turning them into songs that evoke laughter, emotion, and tears in both the storytellers and the audience.",
-        "ko": "샤콘",
-        "zh-Hans": "夏空",
-        "ja": "シャコンヌ"
-    },
-    "1608": {
-        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_41_UI.T_IconRoleHead256_41_UI",
-        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_fuluoluo_UI.T_IconRole_Pile_fuluoluo_UI",
-        "rank": 5,
-        "weapon": 5,
-        "element": 6,
-        "en": "Phrolova",
-        "nickname": "Phrolova",
-        "desc": "Phrolova, a Fractsidus Overseer walking the fine line between life and death, an uncanny, deadly conductor.\nA silent wave of her baton is enough to attune the very frequencies of being and conduct the symphonies of \"souls.\" The music of hers can sculpt a better world or, just as easily, summon a legion to wreak havoc.",
-        "ko": "플로로",
-        "zh-Hans": "弗洛洛",
-        "ja": "フローヴァ"
-    },
-    "1303": {
-        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_15_UI.T_IconRoleHead256_15_UI",
-        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_yuanwu_UI.T_IconRole_Pile_yuanwu_UI",
-        "rank": 4,
-        "weapon": 4,
-        "element": 3,
-        "en": "Yuanwu",
-        "nickname": "Fist of Thunder",
-        "desc": "Yuanwu owns a boxing gym where he teaches <te href=850114>Leihuangquan</te> and health management. He is well-respected in the community for his cordial demeanor and pleasant temperament.",
-        "ko": "연무",
-        "zh-Hans": "渊武",
-        "ja": "淵武"
-    },
-    "1509": {
-        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_60_UI.T_IconRoleHead256_60_UI",
-        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Linnai_UI.T_IconRole_Pile_Linnai_UI",
-        "rank": 5,
-        "weapon": 3,
-        "element": 5,
-        "en": "Lynae",
-        "nickname": "",
-        "desc": "A Startorch Academy prep student whose head-turning, electric style hides an inner focus as explosive as a coiled spring.",
-        "ko": "린네",
-        "zh-Hans": "琳奈",
-        "ja": "リンネー"
-    },
-    "1105": {
-        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_27_UI.T_IconRoleHead256_27_UI",
-        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhezhi_UI.T_IconRole_Pile_zhezhi_UI",
-        "rank": 5,
-        "weapon": 5,
-        "element": 1,
-        "en": "Zhezhi",
-        "nickname": "Zhezhi",
-        "desc": "An artist for hire trying to make a living. Reserved and timid, she is not good with words but speaks volumes through her art, where her creations come to life with impossible authenticity.",
-        "ko": "절지",
-        "zh-Hans": "折枝",
-        "ja": "折枝"
-    },
-    "1410": {
-        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_48_UI.T_IconRoleHead256_48_UI",
-        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_younuo_UI.T_IconRole_Pile_younuo_UI",
-        "rank": 5,
-        "weapon": 4,
-        "element": 4,
-        "en": "Iuno",
-        "nickname": "Iuno",
-        "desc": "She is favored by fate under one name, and swept away by it in another. Yet never once has she been defeated, nor has she ever yielded.\nNow, witness the defiant Priestess. Witness what keeps her striding forward, never to look back. Witness how she walks the intricate web of destiny and becomes the only answer.",
-        "ko": "유노",
-        "zh-Hans": "尤诺",
-        "ja": "ユーノ"
-    },
-    "1307": {
-        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_58_UI.T_IconRoleHead256_58_UI",
-        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Buling_UI.T_IconRole_Pile_Buling_UI",
-        "rank": 4,
-        "weapon": 5,
-        "element": 3,
-        "en": "Buling",
-        "nickname": "Buling",
-        "desc": "Taoist of Mengzhou, Black Shores Consultant, feng shui master, and veteran forum dweller. \nEasygoing and well-traveled, Buling will \"bling\" whatever you seek.",
-        "ko": "복링",
-        "zh-Hans": "卜灵",
-        "ja": "卜霊"
-    },
-    "1210": {
-        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_53_UI.T_IconRoleHead256_53_UI",
-        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Aimisi_UI.T_IconRole_Pile_Aimisi_UI",
-        "rank": 5,
-        "weapon": 2,
-        "element": 2,
-        "en": "Aemeath",
-        "nickname": "Aemeath",
-        "desc": "Once an Exostrider Synchronist of Rabelle College, she is now a digital ghost who sings quietly amongst stars.",
-        "ko": "에이메스",
-        "zh-Hans": "爱弥斯",
-        "ja": "エイメス"
-    },
-    "1304": {
-        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_24_UI.T_IconRoleHead256_24_UI",
-        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_jinxi_UI.T_IconRole_Pile_jinxi_UI",
-        "rank": 5,
-        "weapon": 1,
-        "element": 5,
-        "en": "Jinhsi",
-        "nickname": "Jinhsi's Title",
-        "desc": "Jinhsi, <te href=850118>Magistrate of Jinzhou</te>, gently brightens the hopes of her people, like rays of winter sunlight. \nAs the revered Sentinel's Appointed Resonator, she displays humility and wholeheartedly commits herself to guiding her people towards a brilliant future.",
-        "ko": "금희",
-        "zh-Hans": "今汐",
-        "ja": "今汐"
-    },
-    "1507": {
-        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_38_UI.T_IconRoleHead256_38_UI",
-        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zanni_UI.T_IconRole_Pile_zanni_UI",
-        "rank": 5,
-        "weapon": 4,
-        "element": 5,
-        "en": "Zani",
-        "nickname": "Zani",
-        "desc": "A member of Averardo Vault's security team and holder of \"Best Employee\" for longer than she cares to count.\n \nShe has made plenty of plans for her free time, but for now, her biggest mission is simple: clocking out on time.",
-        "ko": "젠니",
-        "zh-Hans": "赞妮",
-        "ja": "ザンニー"
-    },
-    "1505": {
-        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_28_UI.T_IconRoleHead256_28_UI",
-        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_shouanren_UI.T_IconRole_Pile_shouanren_UI",
-        "rank": 5,
-        "weapon": 5,
-        "element": 5,
-        "en": "Shorekeeper",
-        "nickname": "Shorekeeper",
-        "desc": "The Shorekeeper, guardian of <te href=850109>the Black Shores</te>—this title alone once defined her. \nBut desires, bonds, and emotions… She only began to understand these things after meeting you.",
-        "ko": "파수인",
-        "zh-Hans": "守岸人",
-        "ja": "ショアキーパー"
-    },
-    "1605": {
-        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_4_UI.T_IconRoleHead256_4_UI",
-        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhujuenan_UI.T_IconRole_Pile_zhujuenan_UI",
-        "rank": 5,
-        "weapon": 2,
-        "element": 6,
-        "en": "Rover: Havoc",
-        "nickname": "Vessel of Sounds",
-        "desc": "A mysterious Resonator with the power to absorb all sounds. Currently journeying to find their lost memories.",
-        "ko": "방랑자 · 인멸",
-        "zh-Hans": "漂泊者·湮灭",
-        "ja": "漂泊者・消滅"
-    },
-    "1205": {
-        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_26_UI.T_IconRoleHead256_26_UI",
-        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_changli_UI.T_IconRole_Pile_changli_UI",
-        "rank": 5,
-        "weapon": 2,
-        "element": 2,
-        "en": "Changli",
-        "nickname": "An error occurred. Please contact our Customer Service for assistance.",
-        "desc": "Changli is a counselor serving the <te href=850091>Jinzhou</te> <te href=850084>Magistrate</te>, and former Secretary-General in the capital. \nShrouded in flames, she's fated to burn brightly until her final embers.\nWith her fiery determination and strategic mindset, she rises to power, always thinking ahead to reach her ultimate goal.",
-        "ko": "장리",
-        "zh-Hans": "长离",
-        "ja": "長離"
-    },
-    "1506": {
-        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_45_UI.T_IconRoleHead256_45_UI",
-        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Feibi_UI.T_IconRole_Pile_Feibi_UI",
-        "rank": 5,
-        "weapon": 5,
-        "element": 5,
-        "en": "Phoebe",
-        "nickname": "Phoebe",
-        "desc": "Phoebe, <te href=850100>Acolyte</te> of the <te href=850099>Order of the Deep</te>, is a young woman of quiet devotion. With a kind heart, she fulfills her duties with unwavering diligence. Her prayers, like the light she carries, offer comfort and peace to all.",
-        "ko": "페비",
-        "zh-Hans": "菲比",
-        "ja": "フィービー"
-    },
-    "1207": {
-        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_46_UI.T_IconRoleHead256_46_UI",
-        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_lupa_UI.T_IconRole_Pile_lupa_UI",
-        "rank": 5,
-        "weapon": 1,
-        "element": 2,
-        "en": "Lupa",
-        "nickname": "Lupa",
-        "desc": "A Gladiator of Septimont, a radiant star of the arena.\nFiery and straightforward, Lupa lives like a wild lone wolf. As long as she can savor the adrenaline rush of battle, she doesn't mind if that same fire ends up consuming her whole.",
-        "ko": "루파",
-        "zh-Hans": "露帕",
-        "ja": "ルパ"
-    },
-    "1104": {
-        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_14_UI.T_IconRoleHead256_14_UI",
-        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_lingyang_UI.T_IconRole_Pile_lingyang_UI",
-        "rank": 5,
-        "weapon": 4,
-        "element": 1,
-        "en": "Lingyang",
-        "nickname": "White Tiger",
-        "desc": "An enthusiastic, brave member of the <te href=850130>Liondance Troupe</te> in <te href=850091>Jinzhou</te>, Lingyang is a sincere, compassionate visitor of the human community with incredible physical abilities, whose interest in humans easily shows. With his unique style, he embodies the spirit of <te href=850131>Liondance</te>.",
-        "ko": "능양",
-        "zh-Hans": "凌阳",
-        "ja": "凌陽"
-    },
-    "1607": {
-        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_34_UI.T_IconRoleHead256_34_UI",
-        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_kanteleila_UI.T_IconRole_Pile_kanteleila_UI",
-        "rank": 5,
-        "weapon": 5,
-        "element": 6,
-        "en": "Cantarella",
-        "nickname": "Cantarella",
-        "desc": "The current head of <te href=850094>Fisalia</te>, Cantarella, the Bane.\nA mysterious noblewoman, her beauty as captivating as it is perilous. She resides in a crown-like castle perched atop the mountain, where illusory dreams flow like streams, meticulously spun by her own hands.",
-        "ko": "칸타렐라",
-        "zh-Hans": "坎特蕾拉",
-        "ja": "カンタレラ"
-    },
-    "1203": {
-        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_8_UI.T_IconRoleHead256_8_UI",
-        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_anke_UI.T_IconRole_Pile_anke_UI",
-        "rank": 5,
-        "weapon": 5,
-        "element": 2,
-        "en": "Encore",
-        "nickname": "Wooly-Counting Game",
-        "desc": "A girl accompanied by one black and one white Wooly. Encore, consultant from <te href=850109>the Black Shores</te>, dreams of creating happy stories with candies, fairy tales, and her imagination.",
-        "ko": "앙코",
-        "zh-Hans": "安可",
-        "ja": "アンコ"
-    },
-    "1302": {
-        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_17_UI.T_IconRoleHead256_17_UI",
-        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_yinlin_UI.T_IconRole_Pile_yinlin_UI",
-        "rank": 5,
-        "weapon": 5,
-        "element": 3,
-        "en": "Yinlin",
-        "nickname": "Lightning of Execution",
-        "desc": "Yinlin is a skilled <te href=850087>Patroller</te> and powerful Natural Resonator. After being suspended from her duties at the Public Security Bureau, she must now pursue hidden evils in secrecy.",
-        "ko": "음림",
-        "zh-Hans": "吟霖",
-        "ja": "吟霖"
-    },
-    "1502": {
-        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_5_UI.T_IconRoleHead256_5_UI",
-        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhujue_UI.T_IconRole_Pile_zhujue_UI",
-        "rank": 5,
-        "weapon": 2,
-        "element": 5,
-        "en": "Rover: Spectro",
-        "nickname": "Vessel of Sounds",
-        "desc": "A mysterious Resonator with the power to absorb all sounds. Currently journeying to find their lost memories.",
-        "ko": "방랑자",
-        "zh-Hans": "漂泊者·衍射",
-        "ja": "漂泊者・回折"
-    },
-    "1405": {
-        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_23_UI.T_IconRoleHead256_23_UI",
-        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_jiexin_UI.T_IconRole_Pile_jiexin_UI",
-        "rank": 5,
-        "weapon": 4,
-        "element": 4,
-        "en": "Jianxin",
-        "nickname": "Jianxin's Nickname",
-        "desc": "Jianxin, a Taoist monk and successor of <te href=850134>Fengyiquan</te>, has dedicated her life to mastering the ultimate martial art. With the power to harness and transform environmental Chi, she can create protective barriers that purify both body and mind.",
-        "ko": "감심",
-        "zh-Hans": "鉴心",
-        "ja": "鑑心"
-    },
-    "1103": {
-        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_6_UI.T_IconRoleHead256_6_UI",
-        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_bailian_UI.T_IconRole_Pile_bailian_UI",
-        "rank": 4,
-        "weapon": 5,
-        "element": 1,
-        "en": "Baizhi",
-        "nickname": "Healing You'tan",
-        "desc": "Baizhi is a researcher in <te href=850076>Remnant</te> Ecoacoustics.\nBaizhi's once unfulfilled wish has now manifested as her loyal companion. The Remnant Creature You'tan is her source of healing powers, and a lifelong research focus.",
-        "ko": "설지",
-        "zh-Hans": "白芷",
-        "ja": "白芷"
-    },
-    "1510": {
-        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_54_UI.T_IconRoleHead256_54_UI",
-        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Luhesi_UI.T_IconRole_Pile_Luhesi_UI",
-        "rank": 5,
-        "weapon": 4,
-        "element": 5,
-        "en": "Luuk Herssen",
-        "nickname": "Luuk Herssen",
-        "desc": "The attending physician of Startorch Academy's Resonator Nursing Unit, renowned for his keen intellect and unshakable composure. Rumor has it nobody has ever seen him lose control.\n \nHe is a keen listener adept at dissecting the shadows in a person's heart. From the unhealing wound on his hand, golden blood seeps, a substance he can summon to become a blade of utmost precision.",
-        "ko": "루크 · 헤르센",
-        "zh-Hans": "陆·赫斯",
-        "ja": "リューク・ヘルセン"
-    },
-    "1306": {
-        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_51_UI.T_IconRoleHead256_51_UI",
-        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_aogusita_UI.T_IconRole_Pile_aogusita_UI",
-        "rank": 5,
-        "weapon": 1,
-        "element": 3,
-        "en": "Augusta",
-        "nickname": "Augusta",
-        "desc": "Ephor of Septimont. The undying sun eternally ablaze, and a banner under which defeat does not exist.\nShe comes. She sees. She conquers.\nWith blade held high, she awaits the next challenger or the fate that claims it cannot be defied.",
-        "ko": "아우구스타",
-        "zh-Hans": "奥古斯塔",
-        "ja": "オーガスタ"
-    },
-    "1106": {
-        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_31_UI.T_IconRoleHead256_31_UI",
-        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_youhu_UI.T_IconRole_Pile_youhu_UI",
-        "rank": 4,
-        "weapon": 4,
-        "element": 1,
-        "en": "Youhu",
-        "nickname": "Youhu",
-        "desc": "A voluble and whimsical antique appraiser.\nKnown for creating limericks on the spot, she presents her appraisals with flair and precision. She sets up a stall on the street, ensuring antiques find their way to those who truly cherish them.",
-        "ko": "유호",
-        "zh-Hans": "釉瑚",
-        "ja": "釉瑚"
-    },
-    "1202": {
-        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_2_UI.T_IconRoleHead256_2_UI",
-        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_maxiaofang_UI.T_IconRole_Pile_maxiaofang_UI",
-        "rank": 4,
-        "weapon": 3,
-        "element": 2,
-        "en": "Chixia",
-        "nickname": "Gallant Blaze",
-        "desc": "Chixia is a spirited young Jinzhou Patroller who lights up the streets of Jinzhou. She's always ready to be the hero someone needs.\nShe fuses such passion into the bullets that blast out of her fingertips.",
-        "ko": "치샤",
-        "zh-Hans": "炽霞",
-        "ja": "熾霞"
-    },
-    "1411": {
-        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_56_UI.T_IconRoleHead256_56_UI",
-        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Qiuyuan_UI.T_IconRole_Pile_Qiuyuan_UI",
-        "rank": 5,
-        "weapon": 2,
-        "element": 4,
-        "en": "Qiuyuan",
-        "nickname": "Qiuyuan",
-        "desc": "Former senior agent of Mingting's Internal Security Agency. \n\nThough enmity filled his younger days, loyalty defined his later years. However, scapegoated for a murder, he is now but a blind swordsman wandering the world alone.",
-        "ko": "구원",
-        "zh-Hans": "仇远",
-        "ja": "仇遠"
-    },
-    "1406": {
-        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_4_UI.T_IconRoleHead256_4_UI",
-        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhujuenan_UI.T_IconRole_Pile_zhujuenan_UI",
-        "rank": 5,
-        "weapon": 2,
-        "element": 4,
-        "en": "Rover: Aero",
-        "nickname": "Rover: Aero",
-        "desc": "A mysterious Resonator with the power to absorb all sounds. Currently journeying to find their lost memories.",
-        "ko": "방랑자 · 기류",
-        "zh-Hans": "漂泊者·气动",
-        "ja": "漂泊者・気動"
-    },
-    "1503": {
-        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_3_UI.T_IconRoleHead256_3_UI",
-        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_jueyuan_UI.T_IconRole_Pile_jueyuan_UI",
-        "rank": 5,
-        "weapon": 5,
-        "element": 5,
-        "en": "Verina",
-        "nickname": "Nature Calling",
-        "desc": "With an extensive knowledge of botany, Verina is always solicitous, always smiling, and always wishing for every flower to be blessed with the miracle of life.",
-        "ko": "벨리나",
-        "zh-Hans": "维里奈",
-        "ja": "ヴェリーナ"
-    },
-    "1409": {
-        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_40_UI.T_IconRoleHead256_40_UI",
-        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_katixiya_UI.T_IconRole_Pile_katixiya_UI",
-        "rank": 5,
-        "weapon": 2,
-        "element": 4,
-        "en": "Cartethyia",
-        "nickname": "Cartethyia",
-        "desc": "Cartethyia, the wandering knight who travels across <te href=850096>Rinascita</te>. Formerly known as the Blessed Maiden, the vessel of Divinity, and the Queen of Gale and Tide, she went by the name Fleurdelys. Now, she is simply a free and unfettered wandering knight.",
-        "ko": "카르티시아",
-        "zh-Hans": "卡提希娅",
-        "ja": "カルテジア"
-    },
-    "1606": {
-        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_33_UI.T_IconRoleHead256_33_UI",
-        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_luokeke_UI.T_IconRole_Pile_luokeke_UI",
-        "rank": 5,
-        "weapon": 4,
-        "element": 6,
-        "en": "Roccia",
-        "nickname": "Roccia",
-        "desc": "Assistant, prop master, and improv comedian, Roccia is always there to make sure the <te href=850108>Troupe of Fools</te> is at the ready.\n\nThe Magic Box she carries appears to hold the world, or perhaps she had recreated a world inside the box.",
-        "ko": "로코코",
-        "zh-Hans": "洛可可",
-        "ja": "ロココ"
-    },
-    "1102": {
-        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_7_UI.T_IconRoleHead256_7_UI",
-        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_shanhua_UI.T_IconRole_Pile_shanhua_UI",
-        "rank": 4,
-        "weapon": 2,
-        "element": 1,
-        "en": "Sanhua",
-        "nickname": "Snow Waltz",
-        "desc": "The <te href=850124>bodyguard</te> of <te href=850091>Jinzhou</te>'s <te href=850084>Magistrate</te>, known for having an icy personality.\nOnce regarded as the Asura of Calamity, Sanhua is now a taciturn guardian. She has learned to maintain inner calmness amidst the chaotic frequencies, and the things that once frightened her now fuel her determination.",
-        "ko": "산화",
-        "zh-Hans": "散华",
-        "ja": "散華"
-    },
-    "1508": {
-        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_57_UI.T_IconRoleHead256_57_UI",
-        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Qianxiao_UI.T_IconRole_Pile_Qianxiao_UI",
-        "rank": 5,
-        "weapon": 1,
-        "element": 6,
-        "en": "Chisa",
-        "nickname": "Chisa",
-        "desc": "\"Just an ordinary student.\"\n\nCalmly, she introduces herself, a faint iridescent shimmer flickering in her eyes. Again, the structures of the world reveal themselves in her vision. Narrowing her eyes, she singles out the very thread that tugs at life itself.",
-        "ko": "치사",
-        "zh-Hans": "千咲",
-        "ja": "千咲"
-    },
-    "1301": {
-        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_18_UI.T_IconRoleHead256_18_UI",
-        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_kakaluo_UI.T_IconRole_Pile_kakaluo_UI",
-        "rank": 5,
-        "weapon": 1,
-        "element": 3,
-        "en": "Calcharo",
-        "nickname": "Calcharo",
-        "desc": "Leader of the \"Ghost Hounds,\" an international mercenary group. Ruthless, vengeful, unforgiving. His Forte allows him to summon a special <te href=850081>Tacet Discord</te> to assist his assault on the targets.\nA potential client must be mindful of the price to pay before making him an offer.",
-        "ko": "카카루",
-        "zh-Hans": "卡卡罗",
-        "ja": "カカロ"
-    },
-    "1403": {
-        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_12_UI.T_IconRoleHead256_12_UI",
-        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_qiushui_UI.T_IconRole_Pile_qiushui_UI",
-        "rank": 4,
-        "weapon": 3,
-        "element": 4,
-        "en": "Aalto",
-        "nickname": "Mistcloak Strike",
-        "desc": "Aalto is an enigmatic Information Broker, known for his elusive nature and welcoming smile. Underneath the facade, he is closely affiliated with <te href=850109>the Black Shores</te>.\nRumor has it he'll provide any information at the right price.",
-        "ko": "알토",
-        "zh-Hans": "秋水",
-        "ja": "アールト"
-    },
-    "1601": {
-        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_9_UI.T_IconRoleHead256_9_UI",
-        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_taohua_UI.T_IconRole_Pile_taohua_UI",
-        "rank": 4,
-        "weapon": 1,
-        "element": 6,
-        "en": "Taoqi",
-        "nickname": "Power of Xuanwu",
-        "desc": "Taoqi is the director of border defense at the <te href=850085>Ministry of Development</te>. Despite her seemingly laid-back demeanor, she consistently proves to be a dependable and supportive individual, always lending her hand to those in need. Taoqi is not only a reliable colleague, but also a trustworthy friend that people can confide in.",
-        "ko": "도기",
-        "zh-Hans": "桃祈",
-        "ja": "桃祈"
-    },
-    "1209": {
-        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_61_UI.T_IconRoleHead256_61_UI",
-        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Moning_UI.T_IconRole_Pile_Moning_UI",
-        "rank": 5,
-        "weapon": 1,
-        "element": 2,
-        "en": "Mornye",
-        "nickname": "",
-        "desc": "Mornye, a Spacetrek Collective Research Institute engineer and a Department of Exostrider Engineering professor at Startorch Academy.\nEach step on her prosthetic legs carries her toward the stars of her dreams.",
-        "ko": "모니에",
-        "zh-Hans": "莫宁",
-        "ja": "モーニエ"
-    },
-    "1602": {
-        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_10_UI.T_IconRoleHead256_10_UI",
-        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_micai_UI.T_IconRole_Pile_micai_UI",
-        "rank": 4,
-        "weapon": 2,
-        "element": 6,
-        "en": "Danjin",
-        "nickname": "Scarlet Shade",
-        "desc": "With a vengeful blade of condensed blood in hand, Ranger Danjin hunts down thieves and bandits for retribution. \nShe journeys to distant lands in pursuit of justice.",
-        "ko": "단근",
-        "zh-Hans": "丹瑾",
-        "ja": "丹瑾"
-    },
-    "1305": {
-        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_25_UI.T_IconRoleHead256_25_UI",
-        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_xiangliyao_UI.T_IconRole_Pile_xiangliyao_UI",
-        "rank": 5,
-        "weapon": 4,
-        "element": 3,
-        "en": "Xiangli Yao",
-        "nickname": "Error detected. If you have any questions, please contact Customer Service.",
-        "desc": "Principal Investigator at <te href=850091>Jinzhou</te> <te href=850092>Huaxu Academy</te>, and the Academy's youngest multi-disciplinary scientist. \nA gentle soul with a sharp mind, whose relentless passion for Automata Mechanics always translates into constructive findings and insights.",
-        "ko": "상리요",
-        "zh-Hans": "相里要",
-        "ja": "相里要"
-    },
-    "1206": {
-        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_44_UI.T_IconRoleHead256_44_UI",
-        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Bulante_UI.T_IconRole_Pile_Bulante_UI",
-        "rank": 5,
-        "weapon": 2,
-        "element": 2,
-        "en": "Brant",
-        "nickname": "Brant",
-        "desc": "Brant, the captain of <te href=850096>Rinascita</te>'s <te href=850108>Troupe of Fools</te>, is a free spirit and romantic. Unpredictable and full of life, he is the beating heart of the troupe.\n\nOn stage, he slips into countless roles, donning new masks to breathe life into every story. Yet beyond the spotlight, he is unwaveringly genuine, offering nothing but true sincerity to those around him.",
-        "ko": "브렌트",
-        "zh-Hans": "布兰特",
-        "ja": "ブラント"
-    },
-    "1204": {
-        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_13_UI.T_IconRoleHead256_13_UI",
-        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_baer_UI.T_IconRole_Pile_baer_UI",
-        "rank": 4,
-        "weapon": 3,
-        "element": 2,
-        "en": "Mortefi",
-        "nickname": "Dragon's Breath",
-        "desc": "Mortefi, a skilled expert in Applied Tacetite Study and a member of the Academy’s Department of Safety, possesses the unique ability to transform his accumulated frustration into fiery flames.\nFrom a burning wrath that consumes all, the red dragon shall descend.",
-        "ko": "모르테피",
-        "zh-Hans": "莫特斐",
-        "ja": "モルトフィー"
-    },
-    "1107": {
-        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_32_UI.T_IconRoleHead256_32_UI",
-        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_kelaita_UI.T_IconRole_Pile_kelaita_UI",
-        "rank": 5,
-        "weapon": 3,
-        "element": 1,
-        "en": "Carlotta",
-        "nickname": "Carlotta",
-        "desc": "The second daughter of <te href=850101>Montelli</te> and an art investor unbound by convention, Carlotta moves seamlessly through social circles and business transactions while quietly handling the family's unspeakable \"troubles\" in secret.\nThe blooming of a \"gem,\" the taking of a life—In her own name, she reshapes reality, giving it a new dimension.",
-        "ko": "카를로타",
-        "zh-Hans": "珂莱塔",
-        "ja": "カルロッタ"
-    },
-    "1504": {
-        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_30_UI.T_IconRoleHead256_30_UI",
-        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_dengdeng_UI.T_IconRole_Pile_dengdeng_UI",
-        "rank": 4,
-        "weapon": 1,
-        "element": 3,
-        "en": "Lumi",
-        "nickname": "Lumi",
-        "desc": "Navigator at <te href=850090>Lollo Logistics</te> and leader of a transport squad.\nBorn in a mountain village in Yuezhou, Lumi's sincere and caring nature brings warmth to everyone around her.",
-        "ko": "루미",
-        "zh-Hans": "灯灯",
-        "ja": "灯灯"
-    },
-    "1208": {
-        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_55_UI.T_IconRoleHead256_55_UI",
-        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Jiabeilina_UI.T_IconRole_Pile_Jiabeilina_UI",
-        "rank": 5,
-        "weapon": 3,
-        "element": 2,
-        "en": "Galbrena",
-        "nickname": "Galbrena",
-        "desc": "Cold and decisive, she is the \"Discord Slayer\" who hunts across Solaris and the same \"Fiend of Ever-burning Flame\" spoken of in whispers. Now, she serves as a Black Shores Consultant, active across the world.",
-        "ko": "갈브레나",
-        "zh-Hans": "嘉贝莉娜",
-        "ja": "ガルブレーナ"
-    },
-    "1603": {
-        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_29_UI.T_IconRoleHead256_29_UI",
-        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_chun_UI.T_IconRole_Pile_chun_UI",
-        "rank": 5,
-        "weapon": 2,
-        "element": 6,
-        "en": "Camellya",
-        "nickname": "Camellya",
-        "desc": "A Bloom Bearer of <te href=850109>the Black Shores</te>, Camellya is free-spirited and dangerously charming.\nShe roams <te href=850079>Solaris</te> in search of talent, immersing herself in the present and relishing its pleasures, all while remaining true to herself, unburdened by thoughts of the past or future.",
-        "ko": "카멜리아",
-        "zh-Hans": "椿",
-        "ja": "ツバキ"
-    },
-    "1501": {
-        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_4_UI.T_IconRoleHead256_4_UI",
-        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhujuenan_UI.T_IconRole_Pile_zhujuenan_UI",
-        "rank": 5,
-        "weapon": 2,
-        "element": 5,
-        "en": "Rover: Spectro",
-        "nickname": "Vessel of Sounds",
-        "desc": "A mysterious Resonator with the power to absorb all sounds. Currently journeying to find their lost memories.",
-        "ko": "방랑자 · 회절",
-        "zh-Hans": "漂泊者·衍射",
-        "ja": "漂泊者・回折"
-    },
-    "1404": {
-        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_11_UI.T_IconRoleHead256_11_UI",
-        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_jiyan_UI.T_IconRole_Pile_jiyan_UI",
-        "rank": 5,
-        "weapon": 1,
-        "element": 4,
-        "en": "Jiyan",
-        "nickname": "Windborne Rider",
-        "desc": "Jiyan, leader of the <te href=850086>Midnight Rangers</te>, acts with swift and resolute righteousness. He possesses the formidable ability to conjure a powerful Qingloong from the winds, making him invincible on the battlefield.",
-        "ko": "기염",
-        "zh-Hans": "忌炎",
-        "ja": "忌炎"
-    },
-    "1402": {
-        "icon": "/Game/Aki/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_1_UI.T_IconRoleHead256_1_UI",
-        "background": "/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_yangyang_UI.T_IconRole_Pile_yangyang_UI",
-        "rank": 4,
-        "weapon": 2,
-        "element": 4,
-        "en": "Yangyang",
-        "nickname": "Breath of Winds",
-        "desc": "Yangyang is an Outrider of the <te href=850086>Midnight Rangers</te>.\nOnce sheltered, now a fighter. She soars with the wind to protect others, like a skylark in flight.",
-        "ko": "양양",
-        "zh-Hans": "秧秧",
-        "ja": "秧秧"
-    }
+  "1102": {
+    "name": "散华"
+  },
+  "1103": {
+    "name": "白芷"
+  },
+  "1104": {
+    "name": "凌阳"
+  },
+  "1105": {
+    "name": "折枝"
+  },
+  "1106": {
+    "name": "釉瑚"
+  },
+  "1107": {
+    "name": "珂莱塔"
+  },
+  "1202": {
+    "name": "炽霞"
+  },
+  "1203": {
+    "name": "安可"
+  },
+  "1204": {
+    "name": "莫特斐"
+  },
+  "1205": {
+    "name": "长离"
+  },
+  "1206": {
+    "name": "布兰特"
+  },
+  "1207": {
+    "name": "露帕"
+  },
+  "1208": {
+    "name": "嘉贝莉娜"
+  },
+  "1209": {
+    "name": "莫宁"
+  },
+  "1210": {
+    "name": "爱弥斯"
+  },
+  "1301": {
+    "name": "卡卡罗"
+  },
+  "1302": {
+    "name": "吟霖"
+  },
+  "1303": {
+    "name": "渊武"
+  },
+  "1304": {
+    "name": "今汐"
+  },
+  "1305": {
+    "name": "相里要"
+  },
+  "1306": {
+    "name": "奥古斯塔"
+  },
+  "1307": {
+    "name": "卜灵"
+  },
+  "1402": {
+    "name": "秧秧"
+  },
+  "1403": {
+    "name": "秋水"
+  },
+  "1404": {
+    "name": "忌炎"
+  },
+  "1405": {
+    "name": "鉴心"
+  },
+  "1406": {
+    "name": "漂泊者·气动"
+  },
+  "1407": {
+    "name": "夏空"
+  },
+  "1408": {
+    "name": "漂泊者·气动"
+  },
+  "1409": {
+    "name": "卡提希娅"
+  },
+  "1410": {
+    "name": "尤诺"
+  },
+  "1411": {
+    "name": "仇远"
+  },
+  "1412": {
+    "name": "西格莉卡"
+  },
+  "1501": {
+    "name": "漂泊者·衍射"
+  },
+  "1502": {
+    "name": "漂泊者·衍射"
+  },
+  "1503": {
+    "name": "维里奈"
+  },
+  "1504": {
+    "name": "灯灯"
+  },
+  "1505": {
+    "name": "守岸人"
+  },
+  "1506": {
+    "name": "菲比"
+  },
+  "1507": {
+    "name": "赞妮"
+  },
+  "1508": {
+    "name": "千咲"
+  },
+  "1509": {
+    "name": "琳奈"
+  },
+  "1510": {
+    "name": "陆·赫斯"
+  },
+  "1601": {
+    "name": "桃祈"
+  },
+  "1602": {
+    "name": "丹瑾"
+  },
+  "1603": {
+    "name": "椿"
+  },
+  "1604": {
+    "name": "漂泊者·湮灭"
+  },
+  "1605": {
+    "name": "漂泊者·湮灭"
+  },
+  "1606": {
+    "name": "洛可可"
+  },
+  "1607": {
+    "name": "坎特蕾拉"
+  },
+  "1608": {
+    "name": "弗洛洛"
+  }
 }

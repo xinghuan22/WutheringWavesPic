@@ -30,6 +30,46 @@
       }
     };
 
+    function getChineseName(charInfo) {
+      if (!charInfo) return null;
+      const fields = ['name', 'Name', 'cn', 'zh', 'zhCN', 'zhHans', 'zh-Hans'];
+      for (const field of fields) {
+        const value = charInfo[field];
+        if (typeof value === 'string' && value.trim()) {
+          return value;
+        }
+      }
+      return null;
+    }
+
+    function getEnglishName(charInfo) {
+      if (!charInfo) return null;
+      const fields = ['en', 'EN', 'name_en', 'NameEn', 'enUS', 'english'];
+      for (const field of fields) {
+        const value = charInfo[field];
+        if (typeof value === 'string' && value.trim()) {
+          return value;
+        }
+      }
+      return null;
+    }
+
+    function getCharacterName(folderId, charData, charI18n, lang) {
+      const charInfo = charData?.[folderId];
+      const chineseName = getChineseName(charInfo);
+      const i18nEntry = chineseName ? charI18n?.[chineseName] : null;
+
+      if (lang === 'zh') {
+        return chineseName || getEnglishName(charInfo) || folderId;
+      }
+
+      if (lang === 'cht' && i18nEntry?.cht) {
+        return i18nEntry.cht;
+      }
+
+      return i18nEntry?.en || getEnglishName(charInfo) || chineseName || folderId;
+    }
+
     // 获取URL参数
     window.urlParams = new URLSearchParams(location.search);
     window.currentFolder = window.urlParams.get("folder");
@@ -51,12 +91,14 @@
 
     // 加载角色信息
     function loadCharacterInfo() {
-      fetch('character.json')
-        .then(r => r.json())
-        .then(charData => {
+      Promise.all([
+        fetch('character.json').then(r => r.json()),
+        fetch('char_i18n.json').then(r => r.json()).catch(() => ({}))
+      ])
+        .then(([charData, charI18n]) => {
           const charInfo = charData[window.currentFolder];
           if(charInfo) {
-            const charName = currentLang === 'zh' ? charInfo['zh-Hans'] : charInfo['en'];
+            const charName = getCharacterName(window.currentFolder, charData, charI18n, currentLang);
             document.getElementById("title").innerText = i18n[currentLang].folder + charName;
           } else {
             document.getElementById("title").innerText = i18n[currentLang].folder + window.currentFolder;
